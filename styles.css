@@ -1,43 +1,114 @@
-body {
-    height: 800px;
-    display: grid;
+@media(min-width:320px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 25% auto auto auto;
+        grid-template-areas: 
+            "header"
+            "block-1"
+            "block-2"
+            "block-3";
+        color: black;
+    }
+    header {
+        grid-area: header;
+        background-color: #A35822;
+        padding: 55px;
+    }
+    article {
+        background-color: lightgrey;
+    }
+    
+    .block-1 {
+        grid-area: block-1;
+    }
+    
+    .block-2 {
+        grid-area: block-2;
+    }
+    
+    .block-3 {
+        grid-area: block-3;
+    }
 }
 
-.main-container {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    color: white;
+@media(min-width:992px) {
+    .main-container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "header header header"
+            "block-1 block-2 block-3";
+        color: white;
+    }
+    header {
+        grid-area: header;
+        background-color: #2999A3;
+    }
+    article {
+        background-color: rgb(20, 20, 20);
+    }
+    
+    .block-1 {
+        grid-area: block-1;
+    }
+    
+    .block-2 {
+        grid-area: block-2;
+    }
+    
+    .block-3 {
+        grid-area: block-3;
+    }
 }
 
 header {
-    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: black;
-}
-
-.title {
+article {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 60px;
+    line-height: 20px;
+}
+
+p {
+    display: inline-block;
+    width: 200px;
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    color: white;
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 55px;
+}
+
+h2 {
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 40px;
 }
 
 .color-block {
     width: 200px;
-    height: 70px;
+    height: 30px;
 }
 
 #color-1 {
-    background-color: cornflowerblue;
+    background-color: #A35822;
 }
 
 #color-2 {
-    background-color: orange;
+    background-color: #B5F4FA;
 }
 
 #color-3 {
-    background-color: aquamarine;
+    background-color:#2999A3;
 }
